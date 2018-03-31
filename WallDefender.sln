@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallDefender", "WallDefender.csproj", "{3D65DBA3-7C43-D0E0-9A7E-A807DBFC4757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallDefender.Plugins", "WallDefender.Plugins.csproj", "{5F4F48CD-1288-A4CE-4F23-CB12552738B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WallDefender.Editor", "WallDefender.Editor.csproj", "{B99865BF-3096-4ABF-0FFA-1DD9899AF92E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D65DBA3-7C43-D0E0-9A7E-A807DBFC4757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D65DBA3-7C43-D0E0-9A7E-A807DBFC4757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D65DBA3-7C43-D0E0-9A7E-A807DBFC4757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D65DBA3-7C43-D0E0-9A7E-A807DBFC4757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F4F48CD-1288-A4CE-4F23-CB12552738B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F4F48CD-1288-A4CE-4F23-CB12552738B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F4F48CD-1288-A4CE-4F23-CB12552738B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F4F48CD-1288-A4CE-4F23-CB12552738B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B99865BF-3096-4ABF-0FFA-1DD9899AF92E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B99865BF-3096-4ABF-0FFA-1DD9899AF92E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B99865BF-3096-4ABF-0FFA-1DD9899AF92E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B99865BF-3096-4ABF-0FFA-1DD9899AF92E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

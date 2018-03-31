@@ -69,7 +69,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535242677006904}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -109,9 +109,7 @@ MonoBehaviour:
   - {r: 1, g: 0.1919334, b: 0.1919334, a: 1}
   numOfHits: 0
   damageDealth: 3
-  waveYForce: 400
-  enableCollisionYPos: 4.71
-  collider: {fileID: 61212954575974940}
+  waveFreezeTime: 1
   debuff: 0
   shielded: 0
   waves: []

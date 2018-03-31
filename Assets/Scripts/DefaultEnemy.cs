@@ -10,9 +10,7 @@ using System.Collections.Generic;
 public class DefaultEnemy : Enemy
 {
     public int damageDealth = 3;
-    public float waveYForce = 300.0f;
-    public float enableCollisionYPos;
-    public BoxCollider2D collider;
+    public float waveFreezeTime = 0.5f;
 
     //public TextMeshPro healthMesh;
     [HideInInspector]
@@ -23,6 +21,10 @@ public class DefaultEnemy : Enemy
     public bool shielded = false;
     [HideInInspector]
     public List<Collider2D> waves = new List<Collider2D>();
+
+    bool frozen = false;
+    IEnumerator freeze = null;
+
 
     // Use this for initialization
     protected virtual void Start()
@@ -38,11 +40,6 @@ public class DefaultEnemy : Enemy
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(transform.localPosition.y <= enableCollisionYPos)
-        {
-            collider.enabled = true;
-        }
-
         waves.RemoveAll(IsObjNull);
         if (numOfHits <= 0)
         {
@@ -117,10 +114,11 @@ public class DefaultEnemy : Enemy
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "KnockBack" && !waves.Contains(collision))
+        if (collision.gameObject.tag == "KnockBack" && !waves.Contains(collision) && !frozen)
         {
             waves.Add(collision);
-            GetComponent<Rigidbody2D>().AddForce(new Vector3(0.0f, waveYForce, 0.0f));
+            freeze = FreezeEnemy();
+            StartCoroutine(freeze);
         }
         if (!shielded)
         {
@@ -129,6 +127,16 @@ public class DefaultEnemy : Enemy
                 debuff = true;
             }
         }
+    }
+
+    public IEnumerator FreezeEnemy()
+    {
+        frozen = true;
+        GetComponent<Rigidbody2D>().simulated = false;
+        yield return new WaitForSeconds(waveFreezeTime);
+        GetComponent<Rigidbody2D>().simulated = true;
+        frozen = false;
+        freeze = null;
     }
 
     protected virtual void OnTriggerExit2D(Collider2D collision)
@@ -159,6 +167,11 @@ public class DefaultEnemy : Enemy
 
     public override void Death()
     {
+        if(freeze != null)
+        {
+            StopCoroutine(freeze);
+        }
+
         if (OnDeath != null)
         {
             OnDeath(this.gameObject);
