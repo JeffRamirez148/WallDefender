@@ -1,0 +1,14 @@
+Temp/UnityLockfile
+Temp/__Backupscenes/0.backup
+Temp/*
+Library/*
+
+# Built application files
+*.apk
+*.ap_
+
+# Generated files
+bin/
+gen/
+out/
+
