@@ -67,8 +67,8 @@ public class Player : MonoBehaviour
         //SwipeGestureRecognizer swipe = gesture as SwipeGestureRecognizer;
         if (gesture.State == GestureRecognizerState.Ended)
         {
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(gesture.FocusX, gesture.FocusY, -Camera.main.transform.position.z));
-            swipeSkill.ActivateSkill(worldPos);
+            //Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(gesture.FocusX, gesture.FocusY, -Camera.main.transform.position.z));
+            swipeSkill.ActivateSkill(Vector3.zero);
         }
     }
 

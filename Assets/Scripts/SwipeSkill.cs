@@ -30,7 +30,7 @@ public class SwipeSkill : BaseSkills
         if (canSpawn)
         {
             //clone swipe thing
-            GameObject wave = GameObject.Instantiate(waveToClone, new Vector3(position.x, waveToClone.transform.position.y, waveToClone.transform.position.z), Quaternion.identity);
+            GameObject wave = GameObject.Instantiate(waveToClone);
             wave.GetComponent<Wave>().StartSwipe(waveMoveTime);
             canSpawn = false;
         }
